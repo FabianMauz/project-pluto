@@ -21,6 +21,13 @@ public class GatheringDrone : MonoBehaviour {
     [SerializeField]
     private float HARVEST_DISTANCE = .5f;
 
+    [Header("Harvesting Orbit Settings")]
+    [SerializeField]
+    private float orbitSpeed = 2f; // Radians per second
+    [SerializeField]
+    private float orbitRadius = 0.7f; // Distance from the resource center
+    private float orbitAngle; // Tracks current position along the orbit circle
+
 
 
 
@@ -45,6 +52,10 @@ public class GatheringDrone : MonoBehaviour {
 
         if (state == DroneState.FLIGHING_TO_RESOURCE && isReadyToHarvest()) {
             state = DroneState.HARVESTING;
+            if (currentSource != null) {
+                Vector3 offset = transform.position - currentSource.transform.position;
+                orbitAngle = Mathf.Atan2(offset.y, offset.x);
+            }
         }
 
         if (state == DroneState.FLIGHING_TO_SHIP && isReadyToDock()) {
@@ -92,6 +103,17 @@ public class GatheringDrone : MonoBehaviour {
 
     private void moveDrone() {
         Transform target = null;
+        if (state == DroneState.HARVESTING) {
+            if (currentSource == null) return;
+
+            // Increment angle over time
+            orbitAngle += orbitSpeed * Time.deltaTime;
+
+            // Calculate 2D position relative to the resource target
+            Vector3 offset = new Vector3(Mathf.Cos(orbitAngle), Mathf.Sin(orbitAngle), 0f) * orbitRadius;
+            this.transform.position = currentSource.transform.position + offset;
+            return;
+        }
         if (state == DroneState.FLIGHING_TO_SHIP) {
             target = positionOnShip;
         }

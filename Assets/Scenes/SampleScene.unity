@@ -691,6 +691,8 @@ MonoBehaviour:
   maxSpeed: 2.5
   DOCKING_DISTANCE: 0.1
   HARVEST_DISTANCE: 0.25
+  orbitSpeed: 1
+  orbitRadius: 0.5
 --- !u!1 &2115978139
 GameObject:
   m_ObjectHideFlags: 0
