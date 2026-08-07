@@ -23,10 +23,16 @@ public class GatheringDrone : MonoBehaviour {
 
     [Header("Harvesting Orbit Settings")]
     [SerializeField]
-    private float orbitSpeed = 2f; // Radians per second
+    private float orbitSpeed = 2f;
     [SerializeField]
-    private float orbitRadius = 0.7f; // Distance from the resource center
-    private float orbitAngle; // Tracks current position along the orbit circle
+    private float orbitRadius = 0.7f;
+    private float orbitAngle;
+
+    private float currentExtractionTime = 0;
+    private float timeToExtractOneUnit = .5f;
+    [SerializeField]
+    private float currentExtractedValue = 0;
+    private float maximumCapacity = 5;
 
 
 
@@ -58,7 +64,22 @@ public class GatheringDrone : MonoBehaviour {
             }
         }
 
+        if (state == DroneState.HARVESTING) {
+            currentExtractionTime += Time.deltaTime;
+            if (currentExtractionTime >= timeToExtractOneUnit) {
+                currentExtractionTime = 0;
+                currentExtractedValue += currentSource.extractResource(1);
+                currentExtractedValue = Math.Min(currentExtractedValue, maximumCapacity);
+                if (currentExtractedValue == maxDistance) {
+                    state = DroneState.FLIGHING_TO_SHIP;
+                }
+            }
+        }
+
         if (state == DroneState.FLIGHING_TO_SHIP && isReadyToDock()) {
+            FindAnyObjectByType<PlayerShip>().transferResources(currentExtractedValue);
+            currentExtractedValue = 0;
+            currentSource=null;
             state = DroneState.ON_SHIP;
         }
 

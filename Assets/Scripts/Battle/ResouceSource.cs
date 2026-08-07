@@ -1,16 +1,14 @@
+using System;
 using UnityEngine;
 
-public class ResouceSource : MonoBehaviour
-{
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+public class ResouceSource : MonoBehaviour {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    [SerializeField]
+    private float value;
+
+    public float extractResource(float valueToExtract) {
+        float extractedValue = Math.Min(value, valueToExtract);
+        value -= extractedValue;
+        return extractedValue;
     }
 }

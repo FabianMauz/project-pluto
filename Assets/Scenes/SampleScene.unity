@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 282808392}
   - component: {fileID: 282808393}
   - component: {fileID: 282808394}
+  - component: {fileID: 282808395}
   m_Layer: 0
   m_Name: PayerShip
   m_TagString: Untagged
@@ -198,6 +199,19 @@ MonoBehaviour:
   m_DefaultActionMap: PlayerActionMap
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 519420031}
+--- !u!114 &282808395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282808391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 178c7f1c412a9f14cafc5bf0019faebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerShip
+  resources: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,6 +707,7 @@ MonoBehaviour:
   HARVEST_DISTANCE: 0.25
   orbitSpeed: 1
   orbitRadius: 0.5
+  currentExtractedValue: 0
 --- !u!1 &2115978139
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,6 +754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f27fb35ef718fdd47b37a3799c64d132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResouceSource
+  value: 25
 --- !u!114 &2115978142
 MonoBehaviour:
   m_ObjectHideFlags: 0
