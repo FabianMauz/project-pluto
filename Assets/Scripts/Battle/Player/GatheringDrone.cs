@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GatheringDrone : MonoBehaviour {
@@ -33,6 +35,9 @@ public class GatheringDrone : MonoBehaviour {
     [SerializeField]
     private float currentExtractedValue = 0;
     private float maximumCapacity = 5;
+
+    [SerializeField]
+    private AsteroidController asteroidController;
 
 
 
@@ -79,7 +84,7 @@ public class GatheringDrone : MonoBehaviour {
         if (state == DroneState.FLIGHING_TO_SHIP && isReadyToDock()) {
             FindAnyObjectByType<PlayerShip>().transferResources(currentExtractedValue);
             currentExtractedValue = 0;
-            currentSource=null;
+            currentSource = null;
             state = DroneState.ON_SHIP;
         }
 
@@ -91,13 +96,17 @@ public class GatheringDrone : MonoBehaviour {
 
 
     private ResouceSource getNearestResouceSource() {
-        ResouceSource[] possibleResources = FindObjectsByType<ResouceSource>(FindObjectsSortMode.None);
+        List<ResouceSource> possibleTargets = new List<ResouceSource>();
 
-        if (possibleResources.Length > 0) {
-            float distance = (possibleResources[0].gameObject.transform.position - positionOnShip.position).sqrMagnitude;
+        foreach (Asteroid asteroid in asteroidController.Asteroids) {
+            possibleTargets.Add(asteroid.GetComponent<ResouceSource>());
+        }
+
+        if (possibleTargets.Count > 0) {
+            float distance = (possibleTargets[0].gameObject.transform.position - positionOnShip.position).sqrMagnitude;
 
             if (distance < maxDistance) {
-                return possibleResources[0];
+                return possibleTargets[0];
             }
             else {
                 return null;
@@ -109,14 +118,14 @@ public class GatheringDrone : MonoBehaviour {
     }
 
     private bool isReadyToDock() {
-        float distance = (this.gameObject.transform.position - positionOnShip.position).sqrMagnitude;
+        float distance = (gameObject.transform.position - positionOnShip.position).sqrMagnitude;
         return distance < DOCKING_DISTANCE;
     }
     private bool isReadyToHarvest() {
         if (currentSource == null) {
             return false;
         }
-        float distance = (this.gameObject.transform.position - currentSource.transform.position).sqrMagnitude;
+        float distance = (gameObject.transform.position - currentSource.transform.position).sqrMagnitude;
         return distance < HARVEST_DISTANCE;
     }
 
