@@ -102,19 +102,25 @@ public class GatheringDrone : MonoBehaviour {
             possibleTargets.Add(asteroid.GetComponent<ResouceSource>());
         }
 
-        if (possibleTargets.Count > 0) {
-            float distance = (possibleTargets[0].gameObject.transform.position - positionOnShip.position).sqrMagnitude;
-
-            if (distance < maxDistance) {
-                return possibleTargets[0];
-            }
-            else {
-                return null;
-            }
-        }
-        else {
+        if (possibleTargets.Count == 0) {
             return null;
         }
+
+        float currentMinimalDistance = float.MaxValue;
+        ResouceSource curretTarget = null;
+
+
+        foreach (ResouceSource possibleTarget in possibleTargets) {
+            var localDistance = Vector3.Distance(
+                possibleTarget.gameObject.transform.position,
+                positionOnShip.position);
+            if (currentMinimalDistance > localDistance && localDistance < maxDistance) {
+                curretTarget = possibleTarget;
+                currentMinimalDistance = localDistance;
+
+            }
+        }
+        return curretTarget;
     }
 
     private bool isReadyToDock() {
