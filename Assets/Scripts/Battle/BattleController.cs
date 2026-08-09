@@ -1,16 +1,24 @@
 using UnityEngine;
 
-public class BattleController : MonoBehaviour
-{
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
+public class BattleController : MonoBehaviour {
+
+    private AsteroidController asteroidController;
+    void Start() {
+        asteroidController = FindAnyObjectByType<AsteroidController>();
+
+        triggerAsteroidFieldCreation();
+        triggerAsteroidFieldCreation();
+        triggerAsteroidFieldCreation();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void triggerAsteroidFieldCreation() {
+        asteroidController.createAsteroidField(
+                5,
+                this.transform);
+    }
+
+
+    private enum Sector {
+        TOP_WEST, TOP_EAST, BUTTOM_WEST, BUTTOM_EAST
     }
 }
