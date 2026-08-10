@@ -39,6 +39,9 @@ public class GatheringDrone : MonoBehaviour {
     [SerializeField]
     private AsteroidController asteroidController;
 
+    private float RECHARCH_TIME = 1;
+    private float currentRechargeTime = 0;
+
 
 
 
@@ -47,6 +50,14 @@ public class GatheringDrone : MonoBehaviour {
     }
 
     void Update() {
+
+        if (state == DroneState.RECHARCHING) {
+            currentRechargeTime += Time.deltaTime;
+            if (currentRechargeTime > RECHARCH_TIME) {
+                state = DroneState.ON_SHIP;
+                currentRechargeTime = 0;
+            }
+        }
         //Recall drone if target to far away from ship
         if (currentSource != null &&
             !isLockedSourceInRange()) {
@@ -85,7 +96,7 @@ public class GatheringDrone : MonoBehaviour {
             FindAnyObjectByType<PlayerShip>().transferResources(currentExtractedValue);
             currentExtractedValue = 0;
             currentSource = null;
-            state = DroneState.ON_SHIP;
+            state = DroneState.RECHARCHING;
         }
 
 
@@ -114,6 +125,7 @@ public class GatheringDrone : MonoBehaviour {
             var localDistance = Vector3.Distance(
                 possibleTarget.gameObject.transform.position,
                 positionOnShip.position);
+
             if (currentMinimalDistance > localDistance && localDistance < maxDistance) {
                 curretTarget = possibleTarget;
                 currentMinimalDistance = localDistance;
@@ -161,7 +173,7 @@ public class GatheringDrone : MonoBehaviour {
 
         }
 
-        if (state == DroneState.ON_SHIP) {
+        if (state == DroneState.ON_SHIP || state == DroneState.RECHARCHING) {
             this.transform.position = positionOnShip.position;
         }
 
@@ -177,14 +189,18 @@ public class GatheringDrone : MonoBehaviour {
             return false;
         }
 
-        float distance = (currentSource.gameObject.transform.position - positionOnShip.position).sqrMagnitude;
-        return distance < maxDistance;
+        var distance = Vector3.Distance(
+                      currentSource.gameObject.transform.position,
+                      positionOnShip.position);
+
+        return distance <= maxDistance;
     }
 
     private enum DroneState {
         ON_SHIP,
         FLIGHING_TO_RESOURCE,
         FLIGHING_TO_SHIP,
-        HARVESTING
+        HARVESTING,
+        RECHARCHING
     }
 }
