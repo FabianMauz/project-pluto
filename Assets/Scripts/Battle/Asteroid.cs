@@ -1,11 +1,10 @@
 using UnityEngine;
 
 public class Asteroid : MonoBehaviour {
-    void Start() {
+   [SerializeField]
+   private ResouceSource resourceSource;
 
-    }
-
-    void Update() {
-
+   public void initAsteroid(int resourceAmount) {
+        resourceSource.setValue(resourceAmount);
     }
 }

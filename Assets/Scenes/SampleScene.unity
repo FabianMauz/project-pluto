@@ -606,7 +606,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1787244025}
@@ -696,7 +696,7 @@ Transform:
   m_GameObject: {fileID: 1787244024}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.792, y: 1.606, z: 0}
+  m_LocalPosition: {x: -3.781, y: 1.634, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -718,7 +718,7 @@ MonoBehaviour:
   state: 0
   currentSource: {fileID: 0}
   positionOnShip: {fileID: 1244936855}
-  maxDistance: 5
+  maxDistance: 3
   maxSpeed: 2.5
   DOCKING_DISTANCE: 0.1
   HARVEST_DISTANCE: 0.25
@@ -770,6 +770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b471b67d6ffc5514a81e8a74d7b371c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AsteroidController
+  asteroids: []
   asteroidContainer: {fileID: 42240564}
   asteroidPrefabs:
   - {fileID: 5531882745216749209, guid: 1eb03d6e182a17f4d9beb43b33ec79fc, type: 3}

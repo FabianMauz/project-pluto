@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 5531882745216749209}
   - component: {fileID: 6932876264495976980}
   - component: {fileID: 7797160776663411315}
+  - component: {fileID: 6972847022888138149}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Untagged
@@ -138,6 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6654f9c1dae694e97ca8e011d09ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
+  resourceSource: {fileID: 6932876264495976980}
 --- !u!114 &6932876264495976980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,3 +166,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Rotatiing
   minMaxRotationSpeed: {x: 10, y: 35}
+--- !u!114 &6972847022888138149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4291457654753290911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb30f76e2df40c74cad5e9ec0c60b6bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Vanishing
+  speed: 1
+  sprite: {fileID: 3643286770268152294}

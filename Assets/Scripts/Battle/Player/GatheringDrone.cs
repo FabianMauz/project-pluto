@@ -80,13 +80,20 @@ public class GatheringDrone : MonoBehaviour {
             }
         }
 
-        if (state == DroneState.HARVESTING) {
+        if (state == DroneState.HARVESTING && currentSource != null) {
+
             currentExtractionTime += Time.deltaTime;
             if (currentExtractionTime >= timeToExtractOneUnit) {
                 currentExtractionTime = 0;
                 currentExtractedValue += currentSource.extractResource(1);
                 currentExtractedValue = Math.Min(currentExtractedValue, maximumCapacity);
                 if (currentExtractedValue == maxDistance) {
+                    state = DroneState.FLIGHING_TO_SHIP;
+                }
+
+                if (currentSource.isEmpty()) {
+                    asteroidController.removeAsteroid(currentSource);
+                    currentSource = null;
                     state = DroneState.FLIGHING_TO_SHIP;
                 }
             }

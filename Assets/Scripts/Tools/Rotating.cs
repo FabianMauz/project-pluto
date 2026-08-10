@@ -14,7 +14,7 @@ public class Rotatiing : MonoBehaviour {
             speed = speed * -1;
         }
         rotationSpeed = new Vector3(0f, 0f, speed);
-        print(rotationSpeed);
+    
     }
     void Update() {
         transform.Rotate(rotationSpeed * Time.deltaTime, Space.Self);

@@ -11,4 +11,12 @@ public class ResouceSource : MonoBehaviour {
         value -= extractedValue;
         return extractedValue;
     }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public bool isEmpty() {
+        return value<=0;
+    }
 }

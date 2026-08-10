@@ -13,7 +13,7 @@ public class BattleController : MonoBehaviour {
 
     private void triggerAsteroidFieldCreation() {
         asteroidController.createAsteroidField(
-                5,
+                1,
                 this.transform);
     }
 
