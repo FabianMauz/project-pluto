@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2170291149421313776}
   - component: {fileID: 4364504332202025004}
   - component: {fileID: 7531827494689662500}
+  - component: {fileID: 5486353388564038048}
   m_Layer: 0
   m_Name: Cannon
   m_TagString: Untagged
@@ -107,6 +108,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RotationToMouse
   spriteAngleOffset: -90
+--- !u!114 &5486353388564038048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2229669116839905258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31958bd09aba17f4593ae6a4548974fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MainCannon
+  gameController: {fileID: 0}
+  projectilePrefab: {fileID: 6075643225147050090, guid: 2e97e3d90c198ac48b37cc02c0091cf0, type: 3}
+  projectileStartPoint: {fileID: 3102620715683504919}
 --- !u!1 &2957477208374856326
 GameObject:
   m_ObjectHideFlags: 0
