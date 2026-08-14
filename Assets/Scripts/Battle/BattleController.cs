@@ -21,7 +21,8 @@ public class BattleController : MonoBehaviour {
         if (sector != SectorController.Sector.NONE) {
             sectorController.addAsteroids(
                 sector, asteroidController.createAsteroidField(
-                1, sectorController.getPositionOfSector(sector)));
+                199,
+                sectorController.getPositionOfSector(sector)));
         }
     }
 }
