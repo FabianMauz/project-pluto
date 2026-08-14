@@ -34,6 +34,14 @@ public class SectorController : MonoBehaviour {
         sectors[targetSector] = asteroids;
     }
 
+    public void removeAsteroid(Asteroid asteroid) {
+        foreach (Sector type in Enum.GetValues(typeof(Sector))) {
+            if (type != Sector.NONE) {
+                sectors[type].Remove(asteroid);
+            }
+        }
+    }
+
     public Sector getFreeSector() {
         List<Sector> freeSectors = new List<Sector>();
         foreach (Sector type in Enum.GetValues(typeof(Sector))) {

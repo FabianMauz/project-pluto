@@ -8,21 +8,44 @@ public class BattleController : MonoBehaviour {
     [SerializeField]
     private SectorController sectorController;
 
+    private float currentWaveProgress = 0;
+
+    [SerializeField]
+    private float maxWaveProgress = 60;
+    private int currentWave = 0;
+
+
+    void Update() {
+        currentWaveProgress += Time.deltaTime;
+        if (currentWaveProgress > maxWaveProgress) {
+            currentWaveProgress = 0;
+            triggerNextWave();
+        }
+    }
 
 
     void Start() {
-        triggerAsteroidFieldCreation();
-        triggerAsteroidFieldCreation();
-        triggerAsteroidFieldCreation();
+        triggerNextWave();
     }
 
-    private void triggerAsteroidFieldCreation() {
-        SectorController.Sector sector = sectorController.getFreeSector();
-        if (sector != SectorController.Sector.NONE) {
-            sectorController.addAsteroids(
-                sector, asteroidController.createAsteroidField(
-                199,
-                sectorController.getPositionOfSector(sector)));
+    private void triggerEnemyCreation(SectorController.Sector sector) {
+
+    }
+
+    private void triggerNextWave() {
+        SectorController.Sector freeSector = sectorController.getFreeSector();
+        print("Trigger wave in " + freeSector);
+        if (freeSector != SectorController.Sector.NONE) {
+            triggerEnemyCreation(freeSector);
+            triggerAsteroidFieldCreation(freeSector);
         }
+    }
+
+    private void triggerAsteroidFieldCreation(SectorController.Sector sector) {
+        sectorController.addAsteroids(
+            sector,
+            asteroidController.createAsteroidField(
+                30 + currentWave * 10,
+                sectorController.getPositionOfSector(sector)));
     }
 }

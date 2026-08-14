@@ -6,6 +6,8 @@ public class AsteroidController : MonoBehaviour {
     [SerializeField] private List<Asteroid> asteroids = new List<Asteroid>();
     [SerializeField] private Transform asteroidContainer;
 
+    [SerializeField] private SectorController sectorController;
+
     public IReadOnlyList<Asteroid> Asteroids => asteroids;
 
     [SerializeField] private Asteroid[] asteroidPrefabs;
@@ -16,6 +18,7 @@ public class AsteroidController : MonoBehaviour {
     public void removeAsteroid(ResouceSource asteroid) {
         asteroid.GetComponent<Vanishing>().startEffect();
         asteroids.Remove(asteroid.GetComponent<Asteroid>());
+        sectorController.removeAsteroid(asteroid.GetComponent<Asteroid>());
     }
 
     public List<Asteroid> createAsteroidField(

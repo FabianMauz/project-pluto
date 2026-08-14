@@ -2121,6 +2121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AsteroidController
   asteroids: []
   asteroidContainer: {fileID: 42240564}
+  sectorController: {fileID: 2076106328}
   asteroidPrefabs:
   - {fileID: 5531882745216749209, guid: 1eb03d6e182a17f4d9beb43b33ec79fc, type: 3}
   desity: 3
