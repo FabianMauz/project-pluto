@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BattleController : MonoBehaviour {
@@ -34,7 +33,6 @@ public class BattleController : MonoBehaviour {
 
     private void triggerNextWave() {
         SectorController.Sector freeSector = sectorController.getFreeSector();
-        print("Trigger wave in " + freeSector);
         if (freeSector != SectorController.Sector.NONE) {
             triggerEnemyCreation(freeSector);
             triggerAsteroidFieldCreation(freeSector);
