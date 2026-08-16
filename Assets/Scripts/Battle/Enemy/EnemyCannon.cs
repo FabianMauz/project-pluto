@@ -17,6 +17,8 @@ public class EnemyCannon : MonoBehaviour, EnemyWeapon {
     private int damage;
     private float currentReloadSpeed;
     private AimingTarget aimingTarget;
+    [SerializeField]
+    private Transform projectileStartPoint;
 
     public float getRange() {
         return range;
@@ -24,6 +26,7 @@ public class EnemyCannon : MonoBehaviour, EnemyWeapon {
 
     void Start() {
         aimingTarget = GetComponent<AimingTarget>();
+        currentReloadSpeed=reloadSpeed*fireRateDelay;
     }
 
 
@@ -33,7 +36,12 @@ public class EnemyCannon : MonoBehaviour, EnemyWeapon {
             currentReloadSpeed = 0;
             GameObject target = aimingTarget.getTarget();
             if (target != null) {
-                print("Target found");
+                Projectile projectile = Instantiate(projectilePrefab, projectileStartPoint.position, Quaternion.identity);
+
+                projectile.initProjectile(
+                    4,
+                    (target.transform.position - this.transform.position).normalized, damage,
+                    Target.PLAYER);
             }
         }
     }
