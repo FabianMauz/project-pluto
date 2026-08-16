@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BattleController : MonoBehaviour {
@@ -12,6 +13,8 @@ public class BattleController : MonoBehaviour {
     [SerializeField]
     private float maxWaveProgress = 60;
     private int currentWave = 0;
+
+    public List<PlayerMissile> playerMissiles = new List<PlayerMissile>();
 
 
     void Update() {
