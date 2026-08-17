@@ -22,4 +22,13 @@ public class Projectile : MonoBehaviour {
         position += Time.deltaTime * speed * dPosition;
         transform.position = position;
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        Hitable h = other.GetComponent<Hitable>();
+        if (h != null && h.getTarget() == target) {
+            FindAnyObjectByType<ExplosionController>().triggerExplosion(gameObject.transform.position);
+            h.takeDamage(damage);
+            Destroy(gameObject);
+        }
+    }
 }

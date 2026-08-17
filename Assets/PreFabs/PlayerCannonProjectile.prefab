@@ -101,6 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6655255898859105291}
   - component: {fileID: 6075643225147050090}
+  - component: {fileID: 5649220776459428535}
   m_Layer: 0
   m_Name: PlayerCannonProjectile
   m_TagString: Untagged
@@ -137,3 +138,58 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
   speed: 7
+--- !u!60 &5649220776459428535
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123804575193849206}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.013733149, y: 0.040019512}
+      - {x: -0.016969502, y: 0.009794265}
+      - {x: -0.008162022, y: -0.0060476065}
+      - {x: -0.0051969886, y: -0.045411885}
+      - {x: 0.012815237, y: -0.046487093}
+      - {x: 0.00991106, y: -0.009459019}
+      - {x: 0.015186667, y: 0.0009458065}
+      - {x: 0.012199402, y: 0.041449845}
+  m_UseDelaunayMesh: 1
