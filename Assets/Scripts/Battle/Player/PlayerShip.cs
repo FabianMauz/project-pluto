@@ -1,9 +1,12 @@
 using System;
 using UnityEngine;
 
-public class PlayerShip : MonoBehaviour {
+public class PlayerShip : MonoBehaviour, Hitable {
     [SerializeField]
     private float resources;
+
+    [SerializeField]
+    private float currentHp;
 
     [SerializeField]
     private GameObject[] mainWeapons;
@@ -35,4 +38,11 @@ public class PlayerShip : MonoBehaviour {
         this.resources += value;
     }
 
+    public Target getTarget() {
+        return Target.PLAYER;
+    }
+
+    public void takeDamage(float damage) {
+        currentHp -= damage;
+    }
 }
