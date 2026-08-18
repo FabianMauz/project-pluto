@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour, Hitable {
         currentHp -= damage;
         if (currentHp < 0) {
 
-            triggerDeath();
+      //      triggerDeath();
         }
     }
 
