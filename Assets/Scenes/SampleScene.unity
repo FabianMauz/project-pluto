@@ -1382,9 +1382,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 1692704574}
     m_Modifications:
     - target: {fileID: 2891420145540194260, guid: 7642ee8503b4f1446a03c97fd96a4660, type: 3}
+      propertyPath: range
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891420145540194260, guid: 7642ee8503b4f1446a03c97fd96a4660, type: 3}
       propertyPath: fireRateDelay
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2891420145540194260, guid: 7642ee8503b4f1446a03c97fd96a4660, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 161708541107955037, guid: 1b66da03adb3c454c9c70751f80b1652, type: 3}
     - target: {fileID: 4103891526504517327, guid: 7642ee8503b4f1446a03c97fd96a4660, type: 3}
       propertyPath: m_LocalScale.x
       value: -1
@@ -2610,6 +2618,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1692704574}
     m_Modifications:
+    - target: {fileID: 2891420145540194260, guid: 7642ee8503b4f1446a03c97fd96a4660, type: 3}
+      propertyPath: range
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2891420145540194260, guid: 7642ee8503b4f1446a03c97fd96a4660, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 161708541107955037, guid: 1b66da03adb3c454c9c70751f80b1652, type: 3}
     - target: {fileID: 4103891526504517327, guid: 7642ee8503b4f1446a03c97fd96a4660, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.084
