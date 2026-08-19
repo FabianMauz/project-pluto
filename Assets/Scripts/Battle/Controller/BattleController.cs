@@ -6,6 +6,9 @@ public class BattleController : MonoBehaviour {
     private AsteroidController asteroidController;
 
     [SerializeField]
+    private EnemyController enemyController;
+
+    [SerializeField]
     private SectorController sectorController;
 
     private float currentWaveProgress = 0;
@@ -15,7 +18,6 @@ public class BattleController : MonoBehaviour {
     private int currentWave = 0;
 
     public List<PlayerMissile> playerMissiles = new List<PlayerMissile>();
-
 
     void Update() {
         currentWaveProgress += Time.deltaTime;
@@ -31,7 +33,7 @@ public class BattleController : MonoBehaviour {
     }
 
     private void triggerEnemyCreation(SectorController.Sector sector) {
-
+        enemyController.createEnemyWave(20, currentWave, sector);
     }
 
     private void triggerNextWave() {
