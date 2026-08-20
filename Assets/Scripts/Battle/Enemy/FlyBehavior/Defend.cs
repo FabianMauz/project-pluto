@@ -1,16 +1,16 @@
 using UnityEngine;
 
-public class Defend : MonoBehaviour
-{
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+public class Defend : MonoBehaviour, MovementStrategy {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private GameObject targetObject;
+
+    public void initDefend(GameObject go) {
+        targetObject = go;
+    }
+    public Vector3 getNewTargetPosition() {
+        if (targetObject != null) {
+            return Vector3.zero;
+        }
+        return targetObject.transform.position;
     }
 }

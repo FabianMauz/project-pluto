@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: de04ba742b4f2e64bae20ba303820aa4
+guid: 5069cdd77edea044b9f4f2e972c52c88
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -36,7 +36,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 1000
+    spritePixelsToUnits: 100
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -102,7 +102,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639228654567374572
+  platformSettingsDirtyTick: 0
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -127,9 +127,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Medium-Cannon
+  - name: Enemy-003-Escort
     originalName: 
-    pivot: {x: 0.47706422, y: -0.005928854}
+    pivot: {x: 0.5031056, y: -0.1081081}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -137,9 +137,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 109
-      height: 506
-    spriteID: 860e351093531fc49aed640edfef893d
+      width: 483
+      height: 407
+    spriteID: 0fbd54f9f9848484a905ebc2288cfc5a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -153,69 +153,33 @@ ScriptedImporter:
   asepriteLayers:
   - layerIndex: 0
     uuid:
-      value0: 3060286867
+      value0: 3249313985
       value1: 0
       value2: 0
       value3: 0
     guid: 0
-    name: Medium-Cannon
+    name: Enemy-003-Escort
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Medium-Cannon
+    - name: Enemy-003-Escort
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 13
-        y: 3
-        width: 109
-        height: 506
-      spriteId: 860e351093531fc49aed640edfef893d
+        x: 7
+        y: 44
+        width: 483
+        height: 407
+      spriteId: 0fbd54f9f9848484a905ebc2288cfc5a
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
     parentIndex: -1
   tileSets: []
-  platformSettings:
-  - name: DefaultTexturePlatform
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 16384
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 16384
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: WebGL
-    overridden: 0
-    ignorePlatformSupport: 0
-    maxTextureSize: 16384
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
+  platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 130, y: 509}
-  previousTextureSize: {x: 512, y: 1024}
+  canvasSize: {x: 500, y: 500}
+  previousTextureSize: {x: 512, y: 512}

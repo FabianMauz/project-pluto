@@ -17,6 +17,7 @@ public class EnemyCannon : MonoBehaviour, EnemyWeapon {
     private int damage;
     private float currentReloadSpeed;
     private AimingTarget aimingTarget;
+    
     [SerializeField]
     private Transform projectileStartPoint;
 

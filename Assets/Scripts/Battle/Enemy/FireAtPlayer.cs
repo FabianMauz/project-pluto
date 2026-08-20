@@ -1,16 +1,12 @@
 using UnityEngine;
 
-public class FireAtPlayer : MonoBehaviour
-{
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+public class FireAtPlayer : MonoBehaviour, AimingTarget {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private GameObject player;
+    void Start() {
+        player = FindAnyObjectByType<PlayerShip>().gameObject;
+    }
+    public GameObject getTarget() {
+        return player;
     }
 }
