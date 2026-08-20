@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,12 +16,13 @@ public class BattleController : MonoBehaviour {
 
     [SerializeField]
     private float maxWaveProgress = 60;
-    private int currentWave = 0;
+    public int currentWave = 0;
 
     public List<PlayerMissile> playerMissiles = new List<PlayerMissile>();
 
     void Update() {
         currentWaveProgress += Time.deltaTime;
+        print(currentWaveProgress);
         if (currentWaveProgress > maxWaveProgress) {
             currentWaveProgress = 0;
             triggerNextWave();
@@ -33,7 +35,7 @@ public class BattleController : MonoBehaviour {
     }
 
     private void triggerEnemyCreation(SectorController.Sector sector) {
-        enemyController.createEnemyWave(20, currentWave, sector);
+        enemyController.createEnemyWave(11, currentWave, sector);
     }
 
     private void triggerNextWave() {

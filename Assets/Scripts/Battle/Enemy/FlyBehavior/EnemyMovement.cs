@@ -26,7 +26,7 @@ public class EnemyMovement : MonoBehaviour {
         currentSpeedVector = Vector3.zero;
     }
     void Update() {
-        if (hasReachedTargetPosition()) {
+        if (moveStrategy.hasReachedTargetPosition(targetPosition)) {
             targetPosition = moveStrategy.getNewTargetPosition();
         }
 
@@ -55,7 +55,5 @@ public class EnemyMovement : MonoBehaviour {
         transform.position += currentSpeedVector * Time.deltaTime;
     }
 
-    private bool hasReachedTargetPosition() {
-        return (transform.position - targetPosition).magnitude < targetReachedThresholdDistance;
-    }
+
 }
