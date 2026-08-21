@@ -7,9 +7,6 @@ public class Defend : MonoBehaviour, MovementStrategy {
 
     private GameObject player;
 
-    [SerializeField]
-    private float targetReachedThresholdDistance;
-
     public void initDefend(GameObject go) {
         targetObject = go;
         player = FindAnyObjectByType<PlayerShip>().gameObject;
@@ -21,7 +18,7 @@ public class Defend : MonoBehaviour, MovementStrategy {
         return targetObject.transform.position + new Vector3(Random.Range(-3, 3), Random.Range(-3, 3), 0);
     }
 
-    public bool hasReachedTargetPosition(Vector3 targetPosition) {
+    public bool hasReachedTargetPosition(Vector3 targetPosition, float targetReachedThresholdDistance) {
 
         if (targetObject == null) {
             return true;
