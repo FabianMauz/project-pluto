@@ -157,6 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 702aa04fdc77e2342826f191f58fed57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Patrouling
+  sector: 0
 --- !u!114 &8126782086199167075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc521c210d51a034da91234cbe017937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
-  maxSpeed: 3
+  maxSpeed: 2
   rotationSpeed: 50
   acceleration: 2
   targetReachedThresholdDistance: 2.5

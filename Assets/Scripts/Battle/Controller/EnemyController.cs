@@ -64,7 +64,12 @@ public class EnemyController : MonoBehaviour {
         Patrouling d = cruiser.GetComponent<Patrouling>();
         cruiser.GetComponent<EnemyMovement>().setMovementStrategy(d);
         cruiser.initEnemy(battleController.currentWave);
+        cruiser.transform.SetParent(enemyContainer);
         enemies.Add(cruiser);
+
+        createSingleEscort(cruiser.gameObject, position);
+        createSingleEscort(cruiser.gameObject, position);
+        createSingleEscort(cruiser.gameObject, position);
     }
 
     private void createCannonTurretFleet(Vector3 position) {

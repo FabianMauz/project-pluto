@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 207bbbad2e254894f873a2155aa60877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Defend
+  targetObject: {fileID: 0}
 --- !u!114 &3217582451652136456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,9 +251,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc521c210d51a034da91234cbe017937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
-  maxSpeed: 3
-  rotationSpeed: 50
-  acceleration: 2
+  maxSpeed: 5
+  rotationSpeed: 200
+  acceleration: 12
   targetReachedThresholdDistance: 2.5
 --- !u!1001 &3882686898512833670
 PrefabInstance:
