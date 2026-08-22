@@ -5,8 +5,8 @@ public class DomainMainCannon {
 
     public DomainMainCannon() {
         damage = 10;
-        reloadSpeed = .1f;
-        amount = MainCannonAmount.FOUR;
+        reloadSpeed = .5f;
+        amount = MainCannonAmount.ONE;
     }
 
 

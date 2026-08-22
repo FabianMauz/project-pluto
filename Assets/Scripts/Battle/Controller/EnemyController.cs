@@ -28,8 +28,12 @@ public class EnemyController : MonoBehaviour {
         while (threadValue > 0) {
             Vector3 position = calculatePosition(sector);
 
+            if (threadValue >= 14) {
+                threadValue -= 14;
+                createCruiserFleet(position);
+            }
 
-            if (threadValue >= 11) {
+            else if (threadValue >= 11) {
                 threadValue -= 11;
                 createCannonTurretFleet(position);
             }
@@ -53,6 +57,14 @@ public class EnemyController : MonoBehaviour {
         position.x += random2D.x;
         position.y += random2D.y;
         return position;
+    }
+
+    private void createCruiserFleet(Vector3 position) {
+        Enemy cruiser = Instantiate(enemyPrefabs[3], position, Quaternion.identity);
+        Patrouling d = cruiser.GetComponent<Patrouling>();
+        cruiser.GetComponent<EnemyMovement>().setMovementStrategy(d);
+        cruiser.initEnemy(battleController.currentWave);
+        enemies.Add(cruiser);
     }
 
     private void createCannonTurretFleet(Vector3 position) {

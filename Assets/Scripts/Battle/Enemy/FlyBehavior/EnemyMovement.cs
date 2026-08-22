@@ -25,6 +25,10 @@ public class EnemyMovement : MonoBehaviour {
         currentDirection = Vector3.up;
         currentSpeedVector = Vector3.zero;
     }
+
+    public void setMovementStrategy(MovementStrategy strategy) {
+        moveStrategy = strategy;
+    }
     void Update() {
         if (moveStrategy.hasReachedTargetPosition(targetPosition, targetReachedThresholdDistance)) {
             targetPosition = moveStrategy.getNewTargetPosition();

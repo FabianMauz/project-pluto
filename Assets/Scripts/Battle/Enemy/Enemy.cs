@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour, Hitable {
 
     public void initEnemy(int wave) {
         currentHp = baseHp + wave * hpBonusPerWave;
+        print(currentHp);
     }
 
     public Target getTarget() {
