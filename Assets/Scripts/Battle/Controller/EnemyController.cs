@@ -16,6 +16,9 @@ public class EnemyController : MonoBehaviour {
     [SerializeField]
     private BattleController battleController;
 
+    [SerializeField]
+    private MinimapController minimapController;
+
 
     private List<Enemy> enemies = new List<Enemy>();
     public void removeEnemy(Enemy enemy) {
@@ -63,9 +66,10 @@ public class EnemyController : MonoBehaviour {
         Enemy cruiser = Instantiate(enemyPrefabs[3], position, Quaternion.identity);
         Patrouling d = cruiser.GetComponent<Patrouling>();
         cruiser.GetComponent<EnemyMovement>().setMovementStrategy(d);
-        cruiser.initEnemy(battleController.currentWave);
+        cruiser.initEnemy(battleController.currentWave, Enemy.EnemyClass.CRUISER);
         cruiser.transform.SetParent(enemyContainer);
         enemies.Add(cruiser);
+        minimapController.createMiniMapIcon(cruiser);
 
         createSingleEscort(cruiser.gameObject, position);
         createSingleEscort(cruiser.gameObject, position);
@@ -76,7 +80,8 @@ public class EnemyController : MonoBehaviour {
         Enemy turret = Instantiate(enemyPrefabs[0], position, Quaternion.identity);
         enemies.Add(turret);
         turret.transform.SetParent(enemyContainer);
-        turret.initEnemy(battleController.currentWave);
+        turret.initEnemy(battleController.currentWave, Enemy.EnemyClass.CANNON_TURRET);
+        minimapController.createMiniMapIcon(turret);
 
         createSingleEscort(turret.gameObject, position);
         createSingleEscort(turret.gameObject, position);
@@ -87,14 +92,16 @@ public class EnemyController : MonoBehaviour {
         Enemy scout = Instantiate(enemyPrefabs[1], position, Quaternion.identity);
         enemies.Add(scout);
         scout.transform.SetParent(enemyContainer);
-        scout.initEnemy(battleController.currentWave);
+        scout.initEnemy(battleController.currentWave, Enemy.EnemyClass.SCOUT);
+        minimapController.createMiniMapIcon(scout);
     }
 
     private void createSingleEscort(GameObject shipToDefend, Vector3 position) {
         Enemy escort = Instantiate(enemyPrefabs[2], position, Quaternion.identity);
         enemies.Add(escort);
         escort.transform.SetParent(enemyContainer);
-        escort.initEnemy(battleController.currentWave);
+        escort.initEnemy(battleController.currentWave, Enemy.EnemyClass.ESCORT);
         escort.GetComponent<Defend>().initDefend(shipToDefend);
+        minimapController.createMiniMapIcon(escort);
     }
 }

@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour, Hitable {
@@ -8,10 +9,12 @@ public class Enemy : MonoBehaviour, Hitable {
     private int hpBonusPerWave;
 
     private float currentHp;
+    public EnemyClass shipClass { private set; get; }
 
 
-    public void initEnemy(int wave) {
-        currentHp = baseHp + wave * hpBonusPerWave;      
+    public void initEnemy(int wave, EnemyClass shipClass) {
+        currentHp = baseHp + wave * hpBonusPerWave;
+        this.shipClass = shipClass;
     }
 
     public Target getTarget() {
@@ -28,5 +31,19 @@ public class Enemy : MonoBehaviour, Hitable {
     private void triggerDeath() {
         FindAnyObjectByType<EnemyController>().removeEnemy(this);
         Destroy(this.gameObject);
+    }
+
+    public enum EnemyClass {
+        CANNON_TURRET,
+        SCOUT,
+        ESCORT,
+        CRUISER,
+        MISSILE_TURRET,
+        BATTLE_CRUISER,
+        SPACE_STATION,
+        BATTLE_SHIP,
+        SPACE_FORTRESS
+
+
     }
 }

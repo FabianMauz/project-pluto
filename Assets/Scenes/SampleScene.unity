@@ -150,6 +150,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1698246835}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &104901141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 104901142}
+  - component: {fileID: 104901143}
+  m_Layer: 5
+  m_Name: Minimap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &104901142
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104901141}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1927294667}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &104901143
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104901141}
+  m_CullTransparentMesh: 1
 --- !u!1 &282808391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1488,6 +1532,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2170291149421313776, guid: e00aa1681395ba94e96d02d99acb0ae7, type: 3}
   m_PrefabInstance: {fileID: 1493571129}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1393115578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1393115579}
+  - component: {fileID: 1393115580}
+  m_Layer: 0
+  m_Name: MiniMapController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1393115579
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393115578}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1478871994}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1393115580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393115578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c0cd3dfc31a39743bcd6f4c949ebf9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MinimapController
+  minimapContainer: {fileID: 104901142}
+  prefabs:
+  - {fileID: 2337739301235824222, guid: 8d6144d53cc51134ba12147f1ba57cef, type: 3}
 --- !u!1 &1478871993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,6 +1614,7 @@ Transform:
   - {fileID: 2076106327}
   - {fileID: 1276328234}
   - {fileID: 1697781390}
+  - {fileID: 1393115579}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1493571129
@@ -1906,6 +1998,7 @@ MonoBehaviour:
   - {fileID: 758074433694495124, guid: 35cfeb403933aa44582c6c3bfcc4f0af, type: 3}
   sectorController: {fileID: 2076106328}
   battleController: {fileID: 518483379}
+  minimapController: {fileID: 1393115580}
 --- !u!1 &1698246834
 GameObject:
   m_ObjectHideFlags: 0
@@ -2073,6 +2166,7 @@ RectTransform:
   m_Children:
   - {fileID: 865662554}
   - {fileID: 1943998290}
+  - {fileID: 104901142}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
