@@ -4,11 +4,14 @@ public class MinimapIcon : MonoBehaviour {
     public Enemy enemy { get; private set; }
     private RectTransform rectTransform;
 
-    private float xA = 0.21776f;
-    private float xB = 380.25f;
+    private Vector2 a = new Vector2(4.5922f, 5.467f);
+    private Vector2 b = new Vector2(500f, 251f);
 
     public void initIcon(Enemy enemy) {
         this.enemy = enemy;
+        if (enemy.shipClass == Enemy.EnemyClass.ESCORT) {
+            this.transform.localScale = new Vector3(.7f, .7f, .7f);
+        }
     }
 
     private void Awake() {
@@ -21,12 +24,13 @@ public class MinimapIcon : MonoBehaviour {
             return;
         }
 
-        float calculatedX = (xA * enemy.transform.position.x) + xB;
-
-        // Apply using anchoredPosition for UI RectTransforms
+        float calculatedX = (a.x * enemy.transform.position.x) + b.x;
+        float calculatedY = (a.y * enemy.transform.position.y) + b.y;
         Vector2 pos = rectTransform.anchoredPosition;
         pos.x = calculatedX;
+        pos.y = calculatedY;
         rectTransform.anchoredPosition = pos;
-        print("Enemy x: " + enemy.transform.position + " Icon x:" + calculatedX);
+
+        this.transform.rotation = enemy.transform.rotation;
     }
 }
