@@ -5,6 +5,7 @@ public class AsteroidController : MonoBehaviour {
 
     [SerializeField] private List<Asteroid> asteroids = new List<Asteroid>();
     [SerializeField] private Transform asteroidContainer;
+    [SerializeField] private MinimapController minimapController;
 
     [SerializeField] private SectorController sectorController;
 
@@ -42,7 +43,7 @@ public class AsteroidController : MonoBehaviour {
                 asteroid = createSmallAsteroid(locationCenter);
             }
 
-
+            minimapController.createMiniMapIcon(asteroid);
             asteroids.Add(asteroid);
             createdAsteroids.Add(asteroid);
         }

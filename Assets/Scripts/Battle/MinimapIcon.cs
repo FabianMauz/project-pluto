@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MinimapIcon : MonoBehaviour {
     public Enemy enemy { get; private set; }
+    public Asteroid asteroid { get; private set; }
     public PlayerShip player { get; private set; }
     private RectTransform rectTransform;
 
@@ -14,6 +15,10 @@ public class MinimapIcon : MonoBehaviour {
             this.transform.localScale = new Vector3(.7f, .7f, .7f);
         }
     }
+    public void initIcon(Asteroid asteroid) {
+        this.asteroid = asteroid;
+
+    }
 
     public void initIcon(PlayerShip player) {
         this.player = player;
@@ -24,7 +29,7 @@ public class MinimapIcon : MonoBehaviour {
     }
 
     private void LateUpdate() {
-        if (enemy == null && player == null) {
+        if (enemy == null && player == null && asteroid == null) {
             Destroy(gameObject);
             return;
         }
@@ -38,7 +43,7 @@ public class MinimapIcon : MonoBehaviour {
             rectTransform.anchoredPosition = pos;
             transform.rotation = enemy.transform.rotation;
         }
-        else {
+        else if (asteroid == null) {
             float calculatedX = (a.x * player.transform.position.x) + b.x;
             float calculatedY = (a.y * player.transform.position.y) + b.y;
             Vector2 pos = rectTransform.anchoredPosition;
@@ -46,6 +51,14 @@ public class MinimapIcon : MonoBehaviour {
             pos.y = calculatedY;
             rectTransform.anchoredPosition = pos;
             transform.rotation = player.transform.rotation;
+        }
+        else {
+            float calculatedX = (a.x * asteroid.transform.position.x) + b.x;
+            float calculatedY = (a.y * asteroid.transform.position.y) + b.y;
+            Vector2 pos = rectTransform.anchoredPosition;
+            pos.x = calculatedX;
+            pos.y = calculatedY;
+            rectTransform.anchoredPosition = pos;
         }
 
 

@@ -22,6 +22,13 @@ public class MinimapController : MonoBehaviour {
         minimapIcons.Add(icon);
     }
 
+     public void createMiniMapIcon(Asteroid asteroid) {
+        MinimapIcon icon = Instantiate(prefabs[2], minimapContainer.position, Quaternion.identity);
+        icon.initIcon(asteroid);
+        icon.transform.SetParent(minimapContainer);
+        minimapIcons.Add(icon);
+    }
+
     public void removeMinimapIcon(Enemy enemy) {
         foreach (MinimapIcon icon in minimapIcons) {
             if (icon.enemy == enemy) {

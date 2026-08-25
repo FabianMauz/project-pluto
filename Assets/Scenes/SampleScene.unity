@@ -1579,6 +1579,8 @@ MonoBehaviour:
   minimapContainer: {fileID: 104901142}
   prefabs:
   - {fileID: 2337739301235824222, guid: 8d6144d53cc51134ba12147f1ba57cef, type: 3}
+  - {fileID: 3354730578456720841, guid: 4242780259d67eb4b93fc7b689cf3891, type: 3}
+  - {fileID: 1823526456197483278, guid: ef6607fb51a573e4f80551434fc79eb7, type: 3}
 --- !u!1 &1478871993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2443,6 +2445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AsteroidController
   asteroids: []
   asteroidContainer: {fileID: 42240564}
+  minimapController: {fileID: 1393115580}
   sectorController: {fileID: 2076106328}
   asteroidPrefabs:
   - {fileID: 5531882745216749209, guid: 1eb03d6e182a17f4d9beb43b33ec79fc, type: 3}
