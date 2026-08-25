@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MinimapIcon : MonoBehaviour {
     public Enemy enemy { get; private set; }
+    public PlayerShip player { get; private set; }
     private RectTransform rectTransform;
 
     private Vector2 a = new Vector2(4.5922f, 5.467f);
@@ -14,23 +15,39 @@ public class MinimapIcon : MonoBehaviour {
         }
     }
 
+    public void initIcon(PlayerShip player) {
+        this.player = player;
+    }
+
     private void Awake() {
         rectTransform = GetComponent<RectTransform>();
     }
 
     private void LateUpdate() {
-        if (enemy == null) {
+        if (enemy == null && player == null) {
             Destroy(gameObject);
             return;
         }
 
-        float calculatedX = (a.x * enemy.transform.position.x) + b.x;
-        float calculatedY = (a.y * enemy.transform.position.y) + b.y;
-        Vector2 pos = rectTransform.anchoredPosition;
-        pos.x = calculatedX;
-        pos.y = calculatedY;
-        rectTransform.anchoredPosition = pos;
+        if (enemy != null) {
+            float calculatedX = (a.x * enemy.transform.position.x) + b.x;
+            float calculatedY = (a.y * enemy.transform.position.y) + b.y;
+            Vector2 pos = rectTransform.anchoredPosition;
+            pos.x = calculatedX;
+            pos.y = calculatedY;
+            rectTransform.anchoredPosition = pos;
+            transform.rotation = enemy.transform.rotation;
+        }
+        else {
+            float calculatedX = (a.x * player.transform.position.x) + b.x;
+            float calculatedY = (a.y * player.transform.position.y) + b.y;
+            Vector2 pos = rectTransform.anchoredPosition;
+            pos.x = calculatedX;
+            pos.y = calculatedY;
+            rectTransform.anchoredPosition = pos;
+            transform.rotation = player.transform.rotation;
+        }
 
-        this.transform.rotation = enemy.transform.rotation;
+
     }
 }

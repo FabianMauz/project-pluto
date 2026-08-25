@@ -8,6 +8,13 @@ public class MinimapController : MonoBehaviour {
     [SerializeField]
     private MinimapIcon[] prefabs;
 
+    void Start() {
+        MinimapIcon playerIcon = Instantiate(prefabs[1], minimapContainer.position, Quaternion.identity);
+        playerIcon.initIcon(FindAnyObjectByType<PlayerShip>());
+        playerIcon.transform.SetParent(minimapContainer);
+        minimapIcons.Add(playerIcon);
+    }
+
     public void createMiniMapIcon(Enemy enemy) {
         MinimapIcon icon = Instantiate(prefabs[0], minimapContainer.position, Quaternion.identity);
         icon.initIcon(enemy);
