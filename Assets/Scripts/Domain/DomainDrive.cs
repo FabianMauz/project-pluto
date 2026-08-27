@@ -25,10 +25,10 @@ public class DomainDrive {
     }
 
     public bool isEvadeUpgradable() {
-        return levelOfEvade <= 5;
+        return levelOfEvade <= 4;
     }
     public bool isSpeedUpgradable() {
-        return levelOfSpeed <= 5;
+        return levelOfSpeed <= 4;
     }
 
 
