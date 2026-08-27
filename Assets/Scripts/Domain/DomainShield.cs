@@ -22,6 +22,18 @@ public class DomainShield {
         return levelOfShieldRecharge;
     }
 
+    public void upgadeValueLevel() {
+        levelOfShieldValue++;
+    }
+
+    public void upgadeDelayLevel() {
+        levelOfRechargeDelay++;
+    }
+
+    public void upgradeRechargeLevel() {
+        levelOfShieldRecharge++;
+    }
+
     public bool isValueUpgradable() {
         return levelOfShieldValue <= 4;
     }
