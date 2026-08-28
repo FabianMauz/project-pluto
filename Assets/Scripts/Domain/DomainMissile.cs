@@ -5,7 +5,8 @@ public class DomainMissile {
     public int levelOfRange;
     public int levelOfReloadSpeed;
 
-    public DomainMissile(int startDamage, int startAmount, int startArmor, int startRange, int startReloadSpeed) {
+    public DomainMissile(int startDamage, int startAmount,
+        int startArmor, int startRange, int startReloadSpeed) {
         levelOfAmount = startAmount;
         levelOfArmor = startArmor;
         levelOfDamage = startDamage;
