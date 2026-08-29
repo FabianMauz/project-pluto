@@ -1,19 +1,16 @@
 public class DomainDrive {
-
     public int levelOfSpeed { private set; get; }
     public int levelOfEvade { private set; get; }
-    public float getEvadeChance() {
-        return (levelOfEvade - 1) * 0.05f;
-    }
-
     public DomainDrive(int startSpeed, int startEvade) {
         levelOfEvade = startEvade;
         levelOfSpeed = startSpeed;
-
+    }
+    public float getEvadeChance() {
+        return DomainStats.driveEvadeChance[levelOfEvade - 1];
     }
 
     public float getSpeed() {
-        return 3 + .25f * levelOfSpeed;
+        return DomainStats.driveSpeed[levelOfSpeed - 1];
     }
 
     public void upgradeSpeed() {
@@ -25,11 +22,9 @@ public class DomainDrive {
     }
 
     public bool isEvadeUpgradable() {
-        return levelOfEvade <= 4;
+        return levelOfEvade <= DomainStats.driveEvadeChance.Length - 1;
     }
     public bool isSpeedUpgradable() {
-        return levelOfSpeed <= 4;
+        return levelOfSpeed <= DomainStats.driveSpeed.Length - 1;
     }
-
-
 }
