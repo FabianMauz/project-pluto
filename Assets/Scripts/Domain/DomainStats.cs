@@ -14,6 +14,4 @@ public abstract class DomainStats {
 
     public static float[] armorValue = new float[] { 50, 60, 70, 80, 90 };
     public static float[] armorReducution = new float[] { 0, 1, 2, 3, 4 };
-
-
 }
