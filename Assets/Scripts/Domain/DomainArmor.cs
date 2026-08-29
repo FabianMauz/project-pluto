@@ -3,10 +3,10 @@ public class DomainArmor {
     public int levelOfArmorReduction { private set; get; }
 
     public float getArmorValue() {
-        return 50 + (levelOfArmorValue - 1) * 10;
+        return DomainStats.armorValue[levelOfArmorValue - 1];
     }
     public float getArmorReduction() {
-        return levelOfArmorReduction - 1;
+        return DomainStats.armorReducution[levelOfArmorReduction - 1];
     }
 
     public void upgradeValue() {
@@ -18,9 +18,9 @@ public class DomainArmor {
     }
 
     public bool isValueUpgradable() {
-        return levelOfArmorValue <= 4;
+        return levelOfArmorValue <= DomainStats.armorValue.Length - 1;
     }
     public bool isReductionUpgradable() {
-        return levelOfArmorReduction <= 4;
+        return levelOfArmorReduction <= DomainStats.armorReducution.Length - 1;
     }
 }

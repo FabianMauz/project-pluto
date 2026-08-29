@@ -11,4 +11,9 @@ public abstract class DomainStats {
 
     public static float[] driveEvadeChance = new float[] { 0, .05f, .1f, .15f, .2f };
     public static float[] driveSpeed = new float[] { 3, 3.25f, 3.5f, 3.75f, 4 };
+
+    public static float[] armorValue = new float[] { 50, 60, 70, 80, 90 };
+    public static float[] armorReducution = new float[] { 0, 1, 2, 3, 4 };
+
+
 }
