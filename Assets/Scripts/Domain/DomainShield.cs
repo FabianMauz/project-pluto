@@ -11,15 +11,15 @@ public class DomainShield {
     }
 
     public float getShieldValue() {
-        return (levelOfShieldValue - 1) * 20 + 10;
+        return DomainStats.shieldValue[levelOfShieldValue - 1];
     }
 
     public float getRechargeDelay() {
-        return 6 - levelOfRechargeDelay;
+        return DomainStats.shieldRechargeDelay[levelOfShieldValue - 1];
     }
 
     public float getRechargePerSecond() {
-        return levelOfShieldRecharge;
+        return DomainStats.shieldRechargePerSecond[levelOfShieldValue - 1];
     }
 
     public void upgadeValueLevel() {
@@ -35,13 +35,13 @@ public class DomainShield {
     }
 
     public bool isValueUpgradable() {
-        return levelOfShieldValue <= 4;
+        return levelOfShieldValue <= DomainStats.shieldValue.Length - 1;
     }
     public bool isRechargeDelayUpgradable() {
-        return levelOfRechargeDelay <= 4;
+        return levelOfRechargeDelay <= DomainStats.shieldRechargeDelay.Length - 1;
     }
     public bool isRechargeUpgradable() {
-        return levelOfShieldRecharge <= 4;
+        return levelOfShieldRecharge <= DomainStats.shieldRechargePerSecond.Length - 1;
     }
 
 }
