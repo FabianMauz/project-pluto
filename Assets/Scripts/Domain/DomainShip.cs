@@ -1,5 +1,3 @@
-using System;
-
 public class DomainShip {
     public DomainMainCannon mainCanon { get; private set; }
     public DomainDrive drive { get; private set; }
@@ -7,7 +5,7 @@ public class DomainShip {
     public DomainMissile missile { get; private set; }
 
     public DomainShip() {
-        mainCanon = new DomainMainCannon();
+        mainCanon = new DomainMainCannon(DomainMainCannon.MainCannonAmount.ONE, 1, 1);
         drive = new DomainDrive(1, 1);
         shield = new DomainShield(1, 1, 1);
         missile = new DomainMissile(1, 0, 1, 1, 1);

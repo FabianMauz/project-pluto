@@ -24,12 +24,12 @@ public class MainCannon : MonoBehaviour {
     void Update() {
         if (Mouse.current == null) return;
 
-        if (currentReloadTime <= mainCannon.reloadSpeed) {
+        if (currentReloadTime <= mainCannon.getReloadSpeed()) {
             currentReloadTime += Time.deltaTime;
-            currentReloadTime = Math.Min(currentReloadTime, mainCannon.reloadSpeed);
+            currentReloadTime = Math.Min(currentReloadTime, mainCannon.getReloadSpeed());
 
         }
-        if (Mouse.current.leftButton.isPressed && currentReloadTime >= mainCannon.reloadSpeed) {
+        if (Mouse.current.leftButton.isPressed && currentReloadTime >= mainCannon.getReloadSpeed()) {
             currentReloadTime = 0;
             Projectile projectile = GameObject.Instantiate(projectilePrefab, projectileStartPoint.position, Quaternion.identity);
             Vector2 mouseScreenPosition = Mouse.current.position.ReadValue();
@@ -37,7 +37,7 @@ public class MainCannon : MonoBehaviour {
 
             Vector3 dPosition = mouseWorldPos - transform.position;
             dPosition.z = 0;
-            projectile.initProjectile(3, dPosition.normalized, mainCannon.damage, Target.ENEMY);
+            projectile.initProjectile(3, dPosition.normalized, mainCannon.getDamage(), Target.ENEMY);
         }
     }
 

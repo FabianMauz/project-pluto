@@ -18,7 +18,6 @@ public abstract class DomainStats {
 
     //Main Cannon
     public static float[] mainCannonDamage = new float[] { 10, 20, 30, 40, 50 };
-    public static float[] mainCannonRange = new float[] { 5, 6, 7, 8, 9 };
     public static float[] mainCannonReloadSpeed = new float[] { 1, .9f, .8f, .7f, .6f };
     //Defence Cannon
     public static float[] defenceCannonDamage = new float[] { 5, 10, 15, 20, 25 };
