@@ -29,4 +29,9 @@ public abstract class DomainStats {
     public static float[] attackDroneRange = new float[] { .5f, .75f, 1, 1.25f, 1.5f };
     public static float[] attackDroneRebuild = new float[] { 40, 35, 30, 25, 20f };
     public static float[] attackDroneArmor = new float[] { 5, 10, 15, 20, 25 };
+
+    //Gathering Drone
+    public static float[] mineDroneCapacity = new float[] { 2, 4, 6, 8, 10 };
+    public static float[] mineDroneMoveSpeed = new float[] { 3, 3.5f, 4, 4.5f, 5 };
+    public static float[] mineDroneMineSpeed = new float[] { 1, 2, 3, 4, 5 };
 }
