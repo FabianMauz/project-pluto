@@ -4,7 +4,13 @@ public class DomainDefenceWeapon {
     public int levelOfRange { get; private set; }
     public int levelOfReloadSpeed { get; private set; }
 
-    //Damage
+
+    public DomainDefenceWeapon(int startAmount, int startDamage, int startRange, int startReloadSpeed) {
+        amount = startAmount;
+        levelOfDamage = startDamage;
+        levelOfRange = startRange;
+        levelOfReloadSpeed = startReloadSpeed;
+    }
     public void upgradeDamage() {
         levelOfDamage++;
     }
@@ -16,7 +22,6 @@ public class DomainDefenceWeapon {
     public float getDamage() {
         return DomainStats.defenceCannonDamage[levelOfDamage - 1];
     }
-    //Range
     public void upgradeRange() {
         levelOfRange++;
     }
@@ -28,7 +33,6 @@ public class DomainDefenceWeapon {
     public float getRange() {
         return DomainStats.defenceCannonRange[levelOfRange - 1];
     }
-    //ReloadSpeed
     public void upgradeReloadSpeed() {
         levelOfReloadSpeed++;
     }
@@ -40,8 +44,6 @@ public class DomainDefenceWeapon {
     public float getReloadSpeed() {
         return DomainStats.defenceCannonReloadSpeed[levelOfReloadSpeed - 1];
     }
-
-    //Amount
     public void upgradeAmount() {
         amount++;
     }

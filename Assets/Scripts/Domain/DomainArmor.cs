@@ -2,6 +2,11 @@ public class DomainArmor {
     public int levelOfArmorValue { private set; get; }
     public int levelOfArmorReduction { private set; get; }
 
+
+    public DomainArmor(int startValue, int startReduction) {
+        levelOfArmorReduction = startReduction;
+        levelOfArmorValue = startValue;
+    }
     public float getArmorValue() {
         return DomainStats.armorValue[levelOfArmorValue - 1];
     }
