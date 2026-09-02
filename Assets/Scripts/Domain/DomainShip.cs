@@ -11,6 +11,8 @@ public class DomainShip {
 
     public DomainArmor armor { get; private set; }
 
+    public float resources { get; private set; } = 0;
+
     public DomainShip() {
         mainCanon = new DomainMainCannon(DomainMainCannon.MainCannonAmount.ONE, 1, 1);
         defenceCanon = new DomainDefenceWeapon(0, 1, 1, 1);
@@ -20,5 +22,13 @@ public class DomainShip {
         armor = new DomainArmor(1, 1);
         drive = new DomainDrive(1, 1);
         mineDrone = new DomainMiningDrone(1, 1, 1);
+    }
+
+    public void collectResources(float amount) {
+        resources += amount;
+    }
+
+    public void spentResources(float amount) {
+        resources -= amount;
     }
 }

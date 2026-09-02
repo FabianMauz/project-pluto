@@ -18,7 +18,11 @@ public abstract class DomainStats {
 
     //Main Cannon
     public static float[] mainCannonDamage = new float[] { 10, 20, 30, 40, 50 };
+    public static float[] mainCannonDamageCosts = new float[] { 10, 20, 30, 40, float.MaxValue };
     public static float[] mainCannonReloadSpeed = new float[] { 1, .9f, .8f, .7f, .6f };
+    public static float[] mainCannonReloadSpeedCosts = new float[] { 10, 20, 30, 40, float.MaxValue };
+    public static float[] mainCannonAmountCosts = new float[] { 50, 200 };
+
     //Defence Cannon
     public static float[] defenceCannonDamage = new float[] { 5, 10, 15, 20, 25 };
     public static float[] defenceCannonRange = new float[] { 1, 1.5f, 2, 2.5f, 3 };
