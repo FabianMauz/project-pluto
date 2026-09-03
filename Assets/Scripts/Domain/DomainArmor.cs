@@ -28,4 +28,11 @@ public class DomainArmor {
     public bool isReductionUpgradable() {
         return levelOfArmorReduction <= DomainStats.armorReducution.Length - 1;
     }
+
+    public float getCostOfValueUpgrade() {
+        return DomainStats.armorValueCosts[levelOfArmorValue - 1];
+    }
+    public float getCostOfReductionUpgrade() {
+        return DomainStats.armorRecutionCosts[levelOfArmorReduction - 1];
+    }
 }

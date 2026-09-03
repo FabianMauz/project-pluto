@@ -19,13 +19,13 @@ public class MainCannonShop {
     }
 
     public bool isMainCannonDamageAffordable() {
-        return ship.resources >= ship.mainCanon.getCostOfDamageUpgrade();
+        return ship.resources >= getCostOfDamage();
     }
     public bool isMainCannonReloadSpeedAffordable() {
-        return ship.resources >= ship.mainCanon.getCostOfReloadSpeedUpgrade();
+        return ship.resources >= getCostOfReloadSpeed();
     }
     public bool isMainCannonAmountAffordable() {
-        return ship.resources >= ship.mainCanon.getCostOfReloadSpeedUpgrade();
+        return ship.resources >= getCostOfAmount();
     }
 
     public void upgradeMainCannonDamage() {
