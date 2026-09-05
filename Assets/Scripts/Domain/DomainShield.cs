@@ -44,4 +44,13 @@ public class DomainShield {
         return levelOfShieldRecharge <= DomainStats.shieldRechargePerSecond.Length - 1;
     }
 
+    public float getValueUpgradeCosts() {
+        return DomainStats.ShieldValueCosts[levelOfShieldValue - 1];
+    }
+    public float getRechargeDelayUpgradeCosts() {
+        return DomainStats.shieldRechargeDelay[levelOfRechargeDelay - 1];
+    }
+    public float getRechargeSpeedUpgradeCosts() {
+        return DomainStats.shieldRechargePerSecond[levelOfShieldRecharge - 1];
+    }
 }

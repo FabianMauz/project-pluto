@@ -9,6 +9,10 @@ public abstract class DomainStats {
     public static float[] shieldValue = new float[] { 10, 25, 40, 55, 70 };
     public static float[] shieldRechargeDelay = new float[] { 6, 5, 4, 3, 2 };
     public static float[] shieldRechargePerSecond = new float[] { 1, 2, 3, 4, 5 };
+
+    public static float[] ShieldValueCosts = new float[] { 10, 20, 30, 40, float.MaxValue };
+    public static float[] ShieldRechargeDelayCosts = new float[] { 10, 20, 30, 40, float.MaxValue };
+    public static float[] ShieldRechargeCosts = new float[] { 10, 20, 30, 40, float.MaxValue };
     //Drive
     public static float[] driveEvadeChance = new float[] { 0, .05f, .1f, .15f, .2f };
     public static float[] driveSpeed = new float[] { 3, 3.25f, 3.5f, 3.75f, 4 };
