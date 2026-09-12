@@ -6,12 +6,16 @@ public class Shop {
 
     public MainCannonShop mainCannon { get; private set; }
     public ArmorShop armor { get; private set; }
-     public ShieldShop shield { get; private set; }
+    public ShieldShop shield { get; private set; }
+     public DriveShop drive { get; private set; }
+
+
     public Shop(DomainShip ship) {
         this.ship = ship;
         mainCannon = new MainCannonShop(ship, this);
         armor=new ArmorShop(ship,this);
         shield=new ShieldShop(ship,this);
+        drive=new DriveShop(ship,this);
     }
 
     public void increaseMultiplier() {

@@ -27,4 +27,11 @@ public class DomainDrive {
     public bool isSpeedUpgradable() {
         return levelOfSpeed <= DomainStats.driveSpeed.Length - 1;
     }
+
+    public float getEvadeChanceUpgradeCosts() {
+        return DomainStats.driveEvadeChanceCosts[levelOfEvade - 1];
+    }
+    public float getSpeedUpgradeCosts() {
+        return DomainStats.driveSpeedCosts[levelOfSpeed - 1];
+    }
 }
