@@ -23,7 +23,7 @@ public class ShieldShop {
     public bool isRechargeSpeedAffordable() {
         return ship.resources >= getCostOfRechargeSpeedUpgrade();
     }
-    public bool RechargeDelay() {
+    public bool isRechargeDelayAffordable() {
         return ship.resources >= getCostOfRechargeDelayUpgrade();
     }
 
@@ -35,7 +35,7 @@ public class ShieldShop {
         }
     }
     public void upgradeRechargeDelay() {
-        if (ship.shield.isRechargeDelayUpgradable() && isRechargeSpeedAffordable()) {
+        if (ship.shield.isRechargeDelayUpgradable() && isRechargeDelayAffordable()) {
             ship.spentResources(getCostOfRechargeDelayUpgrade());
             shop.increaseMultiplier();
             ship.shield.upgadeDelayLevel();

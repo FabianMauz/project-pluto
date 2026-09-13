@@ -4,6 +4,11 @@ public abstract class DomainStats {
     public static float[] missileRange = new float[] { 5, 5.5f, 6, 6.5f, 7 };
     public static float[] missileReloadSpeed = new float[] { 5, 4.5f, 4, 3.5f, 3 };
     public static float[] missileArmor = new float[] { 1, 2, 3, 4, 5 };
+    public static float[] missileDamageCosts = new float[] { 10, 20, 30, 40, float.MaxValue };
+    public static float[] missileRangeCosts = new float[] { 10, 20, 30, 40, float.MaxValue };
+    public static float[] missileReloadCosts = new float[] { 10, 20, 30, 40, float.MaxValue };
+    public static float[] missileAmorCosts = new float[] { 10, 20, 30, 40, float.MaxValue };
+    public static float[] missileAmountCosts = new float[] { 10, 20, 30, 40, float.MaxValue };
     public static int MAX_MISSILE_AMOUNT = 3;
     //Shield
     public static float[] shieldValue = new float[] { 10, 25, 40, 55, 70 };

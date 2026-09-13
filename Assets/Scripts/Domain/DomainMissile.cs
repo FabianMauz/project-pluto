@@ -72,4 +72,20 @@ public class DomainMissile {
     public float getAmount() {
         return levelOfAmount;
     }
+
+    public float getDamageUpgradeCosts() {
+        return DomainStats.missileDamageCosts[levelOfDamage - 1];
+    }
+    public float getArmorUpgsradeCosts() {
+        return DomainStats.missileAmorCosts[levelOfDamage - 1];
+    }
+    public float getAmountUpgradeCosts() {
+        return DomainStats.missileAmountCosts[levelOfAmount - 1];
+    }
+    public float getReloadUpgradeCosts() {
+        return DomainStats.missileReloadCosts[levelOfReloadSpeed - 1];
+    }
+    public float getRangeUpgradeCosts() {
+        return DomainStats.missileRangeCosts[levelOfRange - 1];
+    }
 }
