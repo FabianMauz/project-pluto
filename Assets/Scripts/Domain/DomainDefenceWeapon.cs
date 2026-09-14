@@ -51,4 +51,18 @@ public class DomainDefenceWeapon {
     public bool isAmountUpgradable() {
         return amount < 2;
     }
+
+    public float getAmountUpgradeCosts() {
+        return DomainStats.defenceCannonAmountCosts[amount - 1];
+    }
+    public float getDamageUpgradeCosts() {
+        return DomainStats.defenceCannonDamageCosts[levelOfDamage - 1];
+    }
+
+    public float getRangeUpgradeCosts() {
+        return DomainStats.defenceCannonRangeCosts[levelOfRange - 1];
+    }
+    public float getReloadSpeedUpgradeCosts() {
+        return DomainStats.defenceCannonReloadCosts[levelOfReloadSpeed - 1];
+    }
 }
