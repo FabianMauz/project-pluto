@@ -58,10 +58,10 @@ public class DomainMainCannon {
 
     public float getCostOfAmountUpgrade() {
         if (amount == MainCannonAmount.ONE) {
-            return DomainStats.mainCannonReloadSpeedCosts[0];
+            return DomainStats.mainCannonAmountCosts[0];
         }
         else if (amount == MainCannonAmount.TWO) {
-            return DomainStats.mainCannonReloadSpeedCosts[1];
+            return DomainStats.mainCannonAmountCosts[1];
         }
         else {
             return float.MaxValue;

@@ -70,4 +70,27 @@ public class DomainAttackDrone {
     public bool isDamageUpgradable() {
         return levelOfDamage <= DomainStats.attackDroneDamage.Length - 1;
     }
+    public bool isAmountUpgradable() {
+        return amount < DomainStats.attackDroneMaxAmount;
+    }
+
+    public float getCostsOfDamageUpgrade() {
+        return DomainStats.attackDroneDamageCosts[levelOfDamage - 1];
+    }
+    public float getCostsOfAmountUpgrade() {
+        return DomainStats.attackDroneAmountCosts[amount - 1];
+    }
+    public float getCostsOfRangeUpgrade() {
+        return DomainStats.attackDroneRangeCosts[levelOfRange - 1];
+    }
+    public float getCostsOfArmorUpgrade() {
+        return DomainStats.attackDroneArmorCosts[levelOfArmor - 1];
+    }
+    public float getCostsOfRebuildTimeUpgrade() {
+        return DomainStats.attackDroneRebuildTimeCosts[levelOfRebuildTime - 1];
+    }
+    public float getCostsOfReloadSpeedUpgrade() {
+        return DomainStats.attackDroneReloadSpeedCosts[levelOfReloadSpeed - 1];
+    }
+
 }

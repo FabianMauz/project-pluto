@@ -45,12 +45,19 @@ public abstract class DomainStats {
     public static float[] defenceCannonReloadCosts = new float[] { 10, 20, 30, 40, float.MaxValue };
     public static float[] defenceCannonAmountCosts = new float[] { 10, 20, 30, 40, float.MaxValue };
     //Attack Drone
+    public static int attackDroneMaxAmount = 2;
     public static float[] attackDroneDamage = new float[] { 5, 10, 15, 20, 25 };
     public static float[] attackDroneReloadSpeed = new float[] { 2, 1.8f, 1.6f, 1.4f, 1.2f };
     public static float[] attackDroneRange = new float[] { .5f, .75f, 1, 1.25f, 1.5f };
     public static float[] attackDroneRebuild = new float[] { 40, 35, 30, 25, 20f };
     public static float[] attackDroneArmor = new float[] { 5, 10, 15, 20, 25 };
 
+    public static float[] attackDroneDamageCosts = new float[] { 10, 20, 30, 40, float.MaxValue };
+    public static float[] attackDroneReloadSpeedCosts = new float[] { 10, 20, 30, 40, float.MaxValue };
+    public static float[] attackDroneRangeCosts = new float[] { 10, 20, 30, 40, float.MaxValue };
+    public static float[] attackDroneRebuildTimeCosts = new float[] { 10, 20, 30, 40, float.MaxValue };
+    public static float[] attackDroneArmorCosts = new float[] { 10, 20, 30, 40, float.MaxValue };
+    public static float[] attackDroneAmountCosts = new float[] { 10, 20, 30, 40, float.MaxValue };
     //Gathering Drone
     public static float[] mineDroneCapacity = new float[] { 2, 4, 6, 8, 10 };
     public static float[] mineDroneMoveSpeed = new float[] { 3, 3.5f, 4, 4.5f, 5 };
