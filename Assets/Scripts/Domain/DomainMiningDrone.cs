@@ -36,5 +36,14 @@ public class DomainMiningDrone {
     public bool isCapacityUpgradable() {
         return levelOfCapacity <= DomainStats.mineDroneCapacity.Length - 1;
     }
+    public float getMineSpeedUpgradeCosts() {
+        return DomainStats.mineDroneMineSpeedCosts[levelOfMiningSpeed - 1];
+    }
+    public float getMoveSpeedUpgradeCosts() {
+        return DomainStats.mineDroneMoveSpeedCosts[levelOfMoveSpeed - 1];
+    }
+    public float getCapacityUpgradeCosts() {
+        return DomainStats.mineDroneCapacityCosts[levelOfCapacity - 1];
+    }
 
 }

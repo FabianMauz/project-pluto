@@ -62,4 +62,7 @@ public abstract class DomainStats {
     public static float[] mineDroneCapacity = new float[] { 2, 4, 6, 8, 10 };
     public static float[] mineDroneMoveSpeed = new float[] { 3, 3.5f, 4, 4.5f, 5 };
     public static float[] mineDroneMineSpeed = new float[] { 1, 2, 3, 4, 5 };
+    public static float[] mineDroneCapacityCosts = new float[] { 10, 20, 30, 40, float.MaxValue };
+    public static float[] mineDroneMoveSpeedCosts = new float[] { 10, 20, 30, 40, float.MaxValue };
+    public static float[] mineDroneMineSpeedCosts = new float[] { 10, 20, 30, 40, float.MaxValue };
 }

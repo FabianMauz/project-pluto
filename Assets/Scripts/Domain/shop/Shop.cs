@@ -9,6 +9,9 @@ public class Shop {
     public ShieldShop shield { get; private set; }
     public DriveShop drive { get; private set; }
     public MissileShop missile { get; private set; }
+    public HarvestDroneShop harvestDrone { get; private set; }
+    public AttackDroneShop attackDroneDrone { get; private set; }
+    public DefenceCannonShop defenceCannon { get; private set; }
 
     public Shop(DomainShip ship) {
         this.ship = ship;
@@ -17,6 +20,9 @@ public class Shop {
         shield = new ShieldShop(ship, this);
         drive = new DriveShop(ship, this);
         missile = new MissileShop(ship, this);
+        harvestDrone = new HarvestDroneShop(ship, this);
+        attackDroneDrone = new AttackDroneShop(ship, this);
+        defenceCannon = new DefenceCannonShop(ship, this);
     }
 
     public void increaseMultiplier() {
