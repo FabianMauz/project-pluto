@@ -14,7 +14,7 @@ public class DomainShip {
     public float resources { get; private set; } = 0;
 
     public DomainShip() {
-        mainCanon = new DomainMainCannon(DomainMainCannon.MainCannonAmount.ONE, 1, 1);
+        mainCanon = new DomainMainCannon(DomainMainCannon.MainCannonAmount.FOUR, 1, 1);
         defenceCanon = new DomainDefenceWeapon(0, 1, 1, 1);
         attackDrone = new DomainAttackDrone(0, 1, 1, 1, 1, 1);
         missile = new DomainMissile(1, 0, 1, 1, 1);
